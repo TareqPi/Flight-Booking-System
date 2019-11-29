@@ -24,7 +24,7 @@ int main() {
 	// we go on with performing actions on it using the function findUser in Searching cpp.
 
 	
-	Passenger Temp;
+	Passenger Temp;  // declaring temp object, to use it late in the List::FindNode(Passenger PanssengrToFind) method.
 
 	Login:
 
