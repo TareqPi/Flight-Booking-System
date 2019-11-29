@@ -3,8 +3,6 @@
 #include "Flight Booking System.h"
 
 int main() {
-	const int Size = 27;
-	//Flight* Flights = new Flight[Size];
 
 	//MergeSort(Flights, 0, Size - 1); //Order all the flights alphabetically
 	
@@ -90,11 +88,7 @@ int main() {
 
 			Result.DisplayList();
 
-			//for (int i = 0; i < ResultArraySize; i++) {
-			//		cout << 1 + i << ")";
-			//	Result[i]->PrintDetails();
-			//	cout << "----------------------------------" << endl;
-			//}
+	
 			//cout << "Choice: ";
 			//cin >> Choice;
 			//Users[ID].BookFlight(*Result[Choice - 1]);
