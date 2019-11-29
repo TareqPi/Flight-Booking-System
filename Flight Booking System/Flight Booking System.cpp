@@ -50,6 +50,39 @@ int main() {
 		goto Login;
 	}
 
+
+
+	DeleteUserFromSystem:
+	// Function to delete user
+	cout << "Option X: Delete My user from the system " << endl;
+	cout << "Enter Your Details Please: " << endl;
+	cout << "==========================================" << endl;
+
+	// Temp already declared, we can re use it 
+	cout << "First Name: ";
+	// reusing FName;
+	getline(cin, FName);
+	Temp.SetFirstName(FName);
+
+	cout << "Last Name: ";
+	//Re-using LName;
+	getline(cin, LName);
+	Temp.SetLastName(LName);
+
+	cout << "Password: ";
+	//Re Using Pass;
+	getline(cin, Pass);
+	Temp.SetPassword(Pass);
+
+	if (!List.DeleteNode(Temp)) {
+		cout << " Failed to Delete From the system, Try again please." << endl;
+		goto DeleteUserFromSystem;
+	}
+	else
+		cout << "User Got Deleted SuccessFully " << endl;
+
+
+
 	TryAgain:
 	int Choice = MainMenu();
 	
