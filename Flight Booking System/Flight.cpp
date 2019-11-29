@@ -97,29 +97,29 @@ float Flight::GetDuration() const {
 	return _Duration;
 }
 
-void Flight::operator=(Flight& NewFlight) {
-	_Price = NewFlight.GetPrice();
-	_Duration = NewFlight.GetDuration();
-	_Airline = NewFlight.GetAirline();
-	_FlightID = NewFlight.GetFlightID();
-	_FlightType = NewFlight.GetFlightType();
-	_Source = NewFlight.GetSource();
-	_Destination = NewFlight.GetDestination();
-	_DepartureDate = NewFlight.GetDate();
-	_FlightPlane = NewFlight.GetPlane();
-}
+//void Flight::operator=(Flight& NewFlight) {
+//	_Price = NewFlight.GetPrice();
+//	_Duration = NewFlight.GetDuration();
+//	_Airline = NewFlight.GetAirline();
+//	_FlightID = NewFlight.GetFlightID();
+//	_FlightType = NewFlight.GetFlightType();
+//	_Source = NewFlight.GetSource();
+//	_Destination = NewFlight.GetDestination();
+//	_DepartureDate = NewFlight.GetDate();
+//	_FlightPlane = NewFlight.GetPlane();
+//}
 
 void Flight::PrintDetails() {
-	cout << "\tAirline: " << GetAirline() << endl
-		<< "\tFlight ID: " << GetFlightID() << endl
-		<< "\tFlight Model: " << _FlightPlane.GetPlaneName() << endl
-		<< "\tFlight Capacity: " << _FlightPlane.GetPassengerCapacity() << endl
-		<< "\tFlight Type: " << GetFlightType() << endl
-		<< "\tSource: " << GetSource() << endl
-		<< "\tDestination: " << GetDestination() << endl
-		<< "\tPrice: " << GetPrice() << endl
-		<< "\tDuration: " << GetDuration() << " hrs" << endl
-		<< "\tDeparture Date: ";
+	cout << "\tAirline: " << GetAirline() << endl;
+	cout << "\tFlight ID: " << GetFlightID() << endl;
+	cout << "\tFlight Model: " << _FlightPlane.GetPlaneName() << endl;
+	cout << "\tFlight Capacity: " << _FlightPlane.GetPassengerCapacity() << endl;
+	cout << "\tFlight Type: " << GetFlightType() << endl;
+	cout << "\tSource: " << GetSource() << endl;
+	cout << "\tDestination: " << GetDestination() << endl;
+	cout << "\tPrice: " << GetPrice() << endl;
+	cout << "\tDuration: " << GetDuration() << " hrs" << endl;
+	cout << "\tDeparture Date: ";
 	_DepartureDate.PrintDate();
 }
 

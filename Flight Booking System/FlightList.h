@@ -19,7 +19,7 @@ class FlightList {
 		void FindNode(string, string, FlightList);
 		void PriceLowestToHighest();
 //		int DeleteNode(double x);
-//		void DisplayList(void);
+		void DisplayList();
 };
 
 #endif

@@ -10,6 +10,7 @@ int main() {
 	
 	FlightList Flights;
 	LoadData(Flights);
+	Flights.DisplayList();
 
 	const int NumOfUsers = 3;
 	Passenger Users[NumOfUsers] = { Passenger("Abdullah", "AlSolaiman", "135789", "password123"), 
@@ -56,6 +57,7 @@ int main() {
 				cout << "No Flights Found" << endl;
 				goto SearchAgain;
 			}
+			Flights.DisplayList();
 
 			cout << "Sort it based on price or duration? (p/d): ";
 			char POrD;

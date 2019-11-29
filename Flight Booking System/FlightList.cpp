@@ -1,4 +1,8 @@
 #include "FLightList.h"
+#include <iostream>
+
+using std::cout;
+using std::endl;
 
 FlightList::FlightList() {
 	Head = NULL;
@@ -49,4 +53,17 @@ void FlightList::PriceLowestToHighest() {
 	}
 }
 
-bool FlightList::IsEmpty() { return (Head == NULL); }
+bool FlightList::IsEmpty() { 
+	return (Head == NULL);
+}
+
+void FlightList::DisplayList() {
+	FlightNode* CurrNode = Head;
+	int i = 0;
+	while (CurrNode) {
+		cout << ++i << ")";
+		CurrNode->FlightData.PrintDetails();
+		cout << "----------------------------------" << endl;
+		CurrNode = CurrNode->Next;
+	}
+}

@@ -22,7 +22,7 @@ void PriceHighestToLowest(Flight*[], int);
 //void PriceLowestToHighest(Flight*[], int);
 void DurationLongestToShortest(Flight*[], int);
 void DurationShortestToLongest(Flight*[], int);
-void LoadData(FlightList);
+void LoadData(FlightList&);
 // TODO: Reference additional headers your program requires here.
 
 #endif
