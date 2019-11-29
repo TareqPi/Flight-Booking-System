@@ -6,7 +6,7 @@ FlightList::FlightList() {
 }
 
 void FlightList::InsertNode(Flight NewFlight) {
-	Node* NewNode = new Node;
+	FlightNode* NewNode = new FlightNode;
 	NewNode->FlightData = NewFlight;
 	NewNode->Next = Head;
 	Head = NewNode;
@@ -17,7 +17,7 @@ int FlightList::GetSize() {
 	return ListSize;
 }
 
-int FlightList::FindNode(string SearchKey1, string SearchKey2, FlightList Result) {
+void FlightList::FindNode(string SearchKey1, string SearchKey2, FlightList Result) {
 	FlightNode* CurrNode = Head;
 	while (CurrNode) {
 		if (SearchKey1 == CurrNode->FlightData.GetSource()) {
@@ -33,7 +33,6 @@ void FlightList::PriceLowestToHighest() {
 	FlightNode* CurrNode = Head;
 	FlightNode* Temp;
 	int swaps;
-	Flight* Temp;
 	//Acsending Order
 	for (int Pass = 1; (Pass < ListSize); Pass++) {
 		swaps = 0;

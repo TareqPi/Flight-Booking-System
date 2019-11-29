@@ -13,10 +13,10 @@ class FlightList {
 //		~FlightList();
 
 		bool IsEmpty();
-		FlightNode* InsertNode(Flight);
+		void InsertNode(Flight);
 		int GetSize();
 
-		FlightList FindNode(string, string, FlightList);
+		void FindNode(string, string, FlightList);
 		void PriceLowestToHighest();
 //		int DeleteNode(double x);
 //		void DisplayList(void);
