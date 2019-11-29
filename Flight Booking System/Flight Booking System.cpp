@@ -4,7 +4,6 @@
 
 
 
-
 int main() {
 	const int Size = 27;
 	Flight* Flights = new Flight[Size];

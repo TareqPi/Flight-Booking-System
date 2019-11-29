@@ -13,7 +13,8 @@ public:
 	}
 	Passenger user; // data of the node, a passenger object
 	PassengerNode* next; // pointer to next node
-};
+};
+
 class PassengerList {
 public:
 	PassengerList(void) { head = NULL; } // constructor

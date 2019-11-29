@@ -1,5 +1,6 @@
 // Implementation file for the PasengerList class
 #include "PassengerList.h"
+#include "Passenger.h"
 #include <iostream>
 #include <string>
 using std::cout;
@@ -28,7 +29,7 @@ void PassengerList::InsertNode(Passenger PassengerToAdd) {
 int PassengerList::FindNode(Passenger PassengerToFind) {
 	if (IsEmpty()) {
 		cout << "List is Empty" << endl;
-		return NULL;
+		return -1;  // -1 is the key that indicates the list is empty
 	}
 	int CurrentNodeIndex = 0;
 	PassengerNode* CurrentNode = head;
