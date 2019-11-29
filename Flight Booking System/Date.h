@@ -16,7 +16,6 @@ class Date {
 		string GetMonth() const;
 		void SetYear(string);
 		string GetYear() const;
-		void operator=(const Date&);
 		void PrintDate() const;
 };
 

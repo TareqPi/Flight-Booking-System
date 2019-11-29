@@ -49,8 +49,6 @@ class Flight {
 		void SetPlane(string);
 		Plane GetPlane();
 
-//		void operator=(Flight&);
-
 		void PrintDetails();
 
 		~Flight();

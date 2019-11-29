@@ -10,7 +10,6 @@ int main() {
 	
 	FlightList Flights;
 	LoadData(Flights);
-	Flights.DisplayList();
 
 	const int NumOfUsers = 3;
 	Passenger Users[NumOfUsers] = { Passenger("Abdullah", "AlSolaiman", "135789", "password123"), 
@@ -52,12 +51,10 @@ int main() {
 
 			FlightList Result;
 			Flights.FindNode(Source, Destination, Result);
-			//int ResultArraySize = SequentialSearch(Source, Destination, Size, Flights, Result);
 			if (Result.IsEmpty()) {
 				cout << "No Flights Found" << endl;
 				goto SearchAgain;
 			}
-			Flights.DisplayList();
 
 			cout << "Sort it based on price or duration? (p/d): ";
 			char POrD;
@@ -70,7 +67,7 @@ int main() {
 					<< "Choice: ";
 				cin >> Choice;
 				if (1 == Choice)
-					Flights.PriceLowestToHighest();
+					Result.PriceLowestToHighest();
 				//PriceLowestToHighest(Result, ResultArraySize);
 				else if (2 == Choice)
 					cout << "still" << endl;
@@ -90,6 +87,8 @@ int main() {
 					cout << "still" << endl;
 				//	DurationLongestToShortest(Result, ResultArraySize);
 			}
+
+			Result.DisplayList();
 
 			//for (int i = 0; i < ResultArraySize; i++) {
 			//		cout << 1 + i << ")";

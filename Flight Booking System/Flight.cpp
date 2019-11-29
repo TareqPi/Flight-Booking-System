@@ -97,18 +97,6 @@ float Flight::GetDuration() const {
 	return _Duration;
 }
 
-//void Flight::operator=(Flight& NewFlight) {
-//	_Price = NewFlight.GetPrice();
-//	_Duration = NewFlight.GetDuration();
-//	_Airline = NewFlight.GetAirline();
-//	_FlightID = NewFlight.GetFlightID();
-//	_FlightType = NewFlight.GetFlightType();
-//	_Source = NewFlight.GetSource();
-//	_Destination = NewFlight.GetDestination();
-//	_DepartureDate = NewFlight.GetDate();
-//	_FlightPlane = NewFlight.GetPlane();
-//}
-
 void Flight::PrintDetails() {
 	cout << "\tAirline: " << GetAirline() << endl;
 	cout << "\tFlight ID: " << GetFlightID() << endl;
