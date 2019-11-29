@@ -1,5 +1,4 @@
-#include "Flight.h"
-#include "Passenger.h"
+#include "Flight Booking System.h"
 
 int SequentialSearch(string SearchKey1, string SearchKey2, int ArraySize, Flight Array[], Flight* matches[]) {
 	int j = 0;
@@ -11,11 +10,3 @@ int SequentialSearch(string SearchKey1, string SearchKey2, int ArraySize, Flight
 	return j; //total number of matches
 }
 
-int findUser(Passenger Users[], string First, string Last, string Password, int Size) {
-	int i = -1;
-	for (int i = 0; i < Size; i++) {
-		if ((First == Users[i].GetFirstName()) && (Last == Users[i].GetLastName()) && (Password == Users[i].GetPassword()))
-			return i;
-	}
-	return i;
-}

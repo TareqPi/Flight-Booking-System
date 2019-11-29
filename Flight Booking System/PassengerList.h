@@ -18,7 +18,7 @@ public:
 class PassengerList {
 public:
 	PassengerList(void) { head = NULL; } // constructor
-	~PassengerList(void); // destructor
+	//~PassengerList(void); // destructor
 	bool IsEmpty() { return head == NULL; }
 	void InsertNode(Passenger PassengerToAdd);
 	int FindNode(Passenger PassengerToFind);

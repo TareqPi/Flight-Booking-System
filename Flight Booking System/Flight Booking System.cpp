@@ -1,5 +1,4 @@
 ﻿// Flight Booking System.cpp : Defines the entry point for the application.
-//
 #include "Flight Booking System.h"
 
 
@@ -21,19 +20,31 @@ int main() {
 		List.InsertNode(Users[i]);
 	}
 
+	// right now we have a Linked List of Passenger called "List"
+	// we go on with performing actions on it using the function findUser in Searching cpp.
+
 	
+	Passenger Temp;
+
 	Login:
+
 	cout << "First Name: ";
 	string FName;
 	getline(cin, FName);
+	Temp.SetFirstName(FName);
+
 	cout << "Last Name: ";
 	string LName;
 	getline(cin, LName);
+	Temp.SetLastName(LName);
+
 	cout << "Password: ";
 	string Pass;
 	getline(cin, Pass);
+	Temp.SetPassword(Pass);
 	
-	int ID = findUser(Users, FName, LName, Pass, NumOfUsers);
+	
+	int ID = List.FindNode(Temp);    // we pass the passenger to the list, the list has a function that will search for it
 	if (ID == -1) {
 		cout << "Not Found" << endl;
 		goto Login;
