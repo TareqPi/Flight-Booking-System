@@ -47,4 +47,9 @@ int Plane::GetPassengerCapacity() const {
 	return _PassengerCapacity;
 }
 
+void Plane::operator=(const Plane& NewPlane) {
+	_ModelName = NewPlane.GetPlaneName();
+	_PassengerCapacity = NewPlane.GetPassengerCapacity();
+}
+
 Plane::~Plane() {}

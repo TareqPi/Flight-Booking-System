@@ -34,6 +34,11 @@ string Date::GetDay() const {
 string Date::GetMonth() const { 
 	return _Month;
 }
+void Date::operator=(const Date &NewDate) {
+	_Day = NewDate.GetDay();
+	_Month = NewDate.GetMonth();
+	_Year = NewDate.GetYear();
+}
 void Date::PrintDate() const {
 	cout << GetDay() << "/" << GetMonth() << "/" << GetYear() << endl;
 }

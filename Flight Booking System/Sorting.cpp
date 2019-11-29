@@ -1,5 +1,6 @@
 //Used Algorithms: Merge Sort, Improved Bubble Sort
 #include "Flight.h"
+#include "FlightList.h"
 
 void Merge(Flight[], int, int, int);
 
@@ -44,22 +45,22 @@ void Merge(Flight Array[], int First, int Mid, int Last) {
 	delete [] TempArray;
 }
 
-void PriceLowestToHighest(Flight* Array[], int ArraySize) {
-	bool Unsorted = true;
-	Flight* Temp;
+//void PriceLowestToHighest(FlightList Flights, int ArraySize) {
+//	bool Unsorted = true;
+//	Flight* Temp;
 	//Acsending Order
-	for (int Pass = 1; (Pass < ArraySize) && Unsorted; Pass++) {
-		Unsorted = false;
-		for (int x = 0; x < ArraySize - Pass; x++) {
-			if (Array[x]->GetPrice() > Array[x + 1]->GetPrice()) {
-				Temp = Array[x];
-				Array[x] = Array[x + 1];
-				Array[x + 1] = Temp;
-				Unsorted = true;
-			}
-		}
-	}
-}
+//	for (int Pass = 1; (Pass < ArraySize) && Unsorted; Pass++) {
+//		Unsorted = false;
+//		for (int x = 0; x < ArraySize - Pass; x++) {
+//			if (Array[x]->GetPrice() > Array[x + 1]->GetPrice()) {
+//				Temp = Array[x];
+//				Array[x] = Array[x + 1];
+//				Array[x + 1] = Temp;
+//				Unsorted = true;
+//			}
+//		}
+//	}
+//}
 
 void PriceHighestToLowest(Flight* Array[], int ArraySize) {
 	bool Unsorted = true;
@@ -94,7 +95,7 @@ void DurationShortestToLongest(Flight* Array[], int ArraySize) {
 		}
 	}
 }
- 
+
 void DurationLongestToShortest(Flight* Array[], int ArraySize) {
 	bool Unsorted = true;
 	Flight* Temp;

@@ -6,7 +6,6 @@ using std::cout;
 using std::endl;
 using std::string;
 
-
 Flight::Flight(string Airline, string FlightType, string Source, string Destination, string FlightID,
 	 float Price, float Duration, string FlightPlane) {
 	_Airline = Airline;
@@ -28,6 +27,10 @@ void Flight::SetDate(string Day, string Month, string Year) {
 	_DepartureDate.SetDay(Day);
 	_DepartureDate.SetMonth(Month);
 	_DepartureDate.SetYear(Year);
+}
+
+Date Flight::GetDate() const {
+	return _DepartureDate;
 }
 
 void Flight::SetAirline(string Airline) {
@@ -92,6 +95,18 @@ void Flight::SetDuration(float hours) {
 
 float Flight::GetDuration() const {
 	return _Duration;
+}
+
+void Flight::operator=(Flight& NewFlight) {
+	_Price = NewFlight.GetPrice();
+	_Duration = NewFlight.GetDuration();
+	_Airline = NewFlight.GetAirline();
+	_FlightID = NewFlight.GetFlightID();
+	_FlightType = NewFlight.GetFlightType();
+	_Source = NewFlight.GetSource();
+	_Destination = NewFlight.GetDestination();
+	_DepartureDate = NewFlight.GetDate();
+	_FlightPlane = NewFlight.GetPlane();
 }
 
 void Flight::PrintDetails() {

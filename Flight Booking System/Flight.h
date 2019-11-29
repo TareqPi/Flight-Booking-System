@@ -23,6 +23,7 @@ class Flight {
 		Flight();
 
 		void SetDate(string, string, string);
+		Date GetDate() const;
 
 		void SetAirline(string);
 		string GetAirline() const;
@@ -47,6 +48,8 @@ class Flight {
 
 		void SetPlane(string);
 		Plane GetPlane();
+
+		void operator=(Flight&);
 
 		void PrintDetails();
 

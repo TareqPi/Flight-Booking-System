@@ -17,6 +17,7 @@ class Plane {
 		string GetPlaneName() const;
 		void SetPassengerCapacity(int);
 		int GetPassengerCapacity() const;
+		void operator=(const Plane&);
 		~Plane();
 };
 

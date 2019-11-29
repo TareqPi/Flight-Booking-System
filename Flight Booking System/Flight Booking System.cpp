@@ -4,10 +4,13 @@
 
 int main() {
 	const int Size = 27;
-	Flight* Flights = new Flight[Size];
-	LoadData(Flights);
-	MergeSort(Flights, 0, Size - 1); //Order all the flights alphabetically
+	//Flight* Flights = new Flight[Size];
+
+	//MergeSort(Flights, 0, Size - 1); //Order all the flights alphabetically
 	
+	FlightList Flights;
+	LoadData(Flights);
+
 	const int NumOfUsers = 3;
 	Passenger Users[NumOfUsers] = { Passenger("Abdullah", "AlSolaiman", "135789", "password123"), 
 				Passenger("Irfan", "Azim", "246810", "password321"),
@@ -46,9 +49,10 @@ int main() {
 			getline(cin, Destination);
 			cout << endl;
 
-			Flight** Result = new Flight*[Size];
-			int ResultArraySize = SequentialSearch(Source, Destination, Size, Flights, Result);
-			if (ResultArraySize == 0) {
+			FlightList Result;
+			Flights.FindNode(Source, Destination, Result);
+			//int ResultArraySize = SequentialSearch(Source, Destination, Size, Flights, Result);
+			if (Result.IsEmpty()) {
 				cout << "No Flights Found" << endl;
 				goto SearchAgain;
 			}
@@ -64,9 +68,11 @@ int main() {
 					<< "Choice: ";
 				cin >> Choice;
 				if (1 == Choice)
-					PriceLowestToHighest(Result, ResultArraySize);
+					Flights.PriceLowestToHighest();
+				//PriceLowestToHighest(Result, ResultArraySize);
 				else if (2 == Choice)
-					PriceHighestToLowest(Result, ResultArraySize);
+					cout << "still" << endl;
+				//PriceHighestToLowest(Result, ResultArraySize);
 			}
 			else if ('d' == POrD) {
 				cout << "By Duration:" << endl
@@ -76,21 +82,22 @@ int main() {
 					<< "Choice: ";
 				cin >> Choice;
 				if (1 == Choice)
-					DurationShortestToLongest(Result, ResultArraySize);
+					cout << "still" << endl;
+				//	DurationShortestToLongest(Result, ResultArraySize);
 				if (2 == Choice)
-					DurationLongestToShortest(Result, ResultArraySize);
+					cout << "still" << endl;
+				//	DurationLongestToShortest(Result, ResultArraySize);
 			}
 
-			for (int i = 0; i < ResultArraySize; i++) {
-				cout << 1 + i << ")";
-				Result[i]->PrintDetails();
-				cout << "----------------------------------" << endl;
-			}
-			cout << "Choice: ";
-			cin >> Choice;
-			Users[ID].BookFlight(*Result[Choice - 1]);
-			delete[] Result;
-			goto TryAgain;
+			//for (int i = 0; i < ResultArraySize; i++) {
+			//		cout << 1 + i << ")";
+			//	Result[i]->PrintDetails();
+			//	cout << "----------------------------------" << endl;
+			//}
+			//cout << "Choice: ";
+			//cin >> Choice;
+			//Users[ID].BookFlight(*Result[Choice - 1]);
+			//goto TryAgain;
 		}
 		case 2: {
 			if (Users[ID].ViewBookedFlights())
@@ -128,6 +135,5 @@ int main() {
 			goto TryAgain;
 		}
 	}
-	delete[] Flights;
 	return 0;
 }
