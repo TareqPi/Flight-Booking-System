@@ -2,6 +2,9 @@
 //
 #include "Flight Booking System.h"
 
+
+
+
 int main() {
 	const int Size = 27;
 	Flight* Flights = new Flight[Size];
@@ -12,6 +15,13 @@ int main() {
 	Passenger Users[NumOfUsers] = { Passenger("Abdullah", "AlSolaiman", "135789", "password123"), 
 				Passenger("Irfan", "Azim", "246810", "password321"),
 				Passenger("Tareq", "Al-Ahdal", "1234567", "myPassword") };
+	
+	PassengerList List;
+	for (int i = 0; i < NumOfUsers; i++)
+	{
+		List.InsertNode(Users[i]);
+	}
+
 	
 	Login:
 	cout << "First Name: ";

@@ -8,6 +8,7 @@
 #include "Passenger.h"
 #include "Flight.h"
 #include "Date.h"
+#include "PassengerList.h"
 using std::cout;
 using std::cin;
 using std::endl;
