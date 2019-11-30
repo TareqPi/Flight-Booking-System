@@ -4,27 +4,24 @@
 #include "Passenger.h"
 using std::string;
 
-
-
 class PassengerNode {
 public:
-	PassengerNode(Passenger PassengerToAdd) {
-		user = PassengerToAdd;
-	}
-	Passenger user; // data of the node, a passenger object
-	PassengerNode* next; // pointer to next node
+	Passenger PassengerData; // data of the node, a passenger object
+	PassengerNode* Next; // pointer to next node
 };
 
 class PassengerList {
-public:
-	PassengerList(void) { head = NULL; } // constructor
-	//~PassengerList(void); // destructor
-	bool IsEmpty() { return head == NULL; }
-	void InsertNode(Passenger PassengerToAdd);
-	int FindNode(Passenger PassengerToFind);
-	bool DeleteNode(Passenger PassengerToDelete);
 private:
-	PassengerNode* head;
+	PassengerNode* Head;
+	int ListSize;
+public:
+	PassengerList();
+	//~PassengerList(void); 
+	bool IsEmpty();
+	void InsertNode(Passenger);
+	int GetSize() const;
+	int FindNode(Passenger);
+	bool DeleteNode(Passenger);
 };
 
 #endif

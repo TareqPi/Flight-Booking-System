@@ -7,23 +7,27 @@ using std::cout;
 using std::endl;
 using std::string;
 
+PassengerList::PassengerList() {
+	Head = NULL;
+	ListSize = 0;
+}
 
+void PassengerList::InsertNode(Passenger NewPassenger) {
+	PassengerNode* NewNode = new PassengerNode;
+	NewNode->PassengerData = NewPassenger;
 
-void PassengerList::InsertNode(Passenger PassengerToAdd) {
-
-	PassengerNode* CurrentNode = head; // simply to keep track.
-	// if our list is empty, make the new element the head; 
 	if (IsEmpty()) {
-		head = new PassengerNode(PassengerToAdd);
+		NewNode->Next = NULL;
 	}
-	/*Keep Looping through the list until you arrive to the latest element, break afterthat.*/
-	while (CurrentNode->next != NULL) {
-		CurrentNode = CurrentNode->next;       //  update the current node                         
+	else {
+		NewNode->Next = Head;
 	}
-	// now that we are the last element, append our ->next to the new node with the new element.
-	CurrentNode->next = new PassengerNode(PassengerToAdd);
+	Head = NewNode;
+	ListSize++;
+}
 
-	return;
+bool PassengerList::IsEmpty() { 
+	return Head == NULL; 
 }
 
 int PassengerList::FindNode(Passenger PassengerToFind) {
@@ -32,19 +36,20 @@ int PassengerList::FindNode(Passenger PassengerToFind) {
 		return -1;  // -1 is the key that indicates the list is empty
 	}
 	int CurrentNodeIndex = 0;
-	PassengerNode* CurrentNode = head;
-	while ((CurrentNode->next != NULL)
-		&& (CurrentNode->user.GetFirstName() != PassengerToFind.GetFirstName())
-		&& (CurrentNode->user.GetLastName() != PassengerToFind.GetLastName())
-		&& (CurrentNode->user.GetPassword() != PassengerToFind.GetPassword())) {
-
-		CurrentNode = CurrentNode->next;
+	PassengerNode* CurrentNode = Head;
+	while (CurrentNode) {
+		if (CurrentNode->PassengerData.GetFirstName() == PassengerToFind.GetFirstName() &&
+			CurrentNode->PassengerData.GetLastName() == PassengerToFind.GetLastName() &&
+			CurrentNode->PassengerData.GetPassword() == PassengerToFind.GetPassword())
+			return CurrentNodeIndex;
+		CurrentNode = CurrentNode->Next;
 		++CurrentNodeIndex;
 	}
-	return CurrentNodeIndex;
-
+	return -1; // if not found
 }
-
+int PassengerList::GetSize() const {
+	return ListSize;
+}
 bool PassengerList::DeleteNode(Passenger PassengerToDelete) {
 	// 3 cases to consider
 	// 1st case: no data at all in list
@@ -52,24 +57,24 @@ bool PassengerList::DeleteNode(Passenger PassengerToDelete) {
 		return false;
 	}
 	//2nd case: if the deleted one is actually the first element of the list;
-	if ((head->user.GetFirstName() == PassengerToDelete.GetFirstName())
-		&& (head->user.GetLastName() == PassengerToDelete.GetLastName())) {
+	if ((Head->PassengerData.GetFirstName() == PassengerToDelete.GetFirstName())
+		&& (Head->PassengerData.GetLastName() == PassengerToDelete.GetLastName())) {
 
-		head = head->next;
+		Head = Head->Next;
 		return true;
 	}
 
 	//3rd case: if the deleted is within the linked list.
-	PassengerNode* CurrentNode = head;
-	while (CurrentNode->next != NULL) {
-		if ((CurrentNode->next->user.GetFirstName() == PassengerToDelete.GetFirstName())
-			&& (CurrentNode->next->user.GetLastName() == PassengerToDelete.GetLastName())) {
+	PassengerNode* CurrentNode = Head;
+	while (CurrentNode->Next != NULL) {
+		if ((CurrentNode->Next->PassengerData.GetFirstName() == PassengerToDelete.GetFirstName())
+			&& (CurrentNode->Next->PassengerData.GetLastName() == PassengerToDelete.GetLastName())) {
 
-			CurrentNode->next = CurrentNode->next->next;
+			CurrentNode->Next = CurrentNode->Next->Next;
 			return true;
 		}
 
-		CurrentNode = CurrentNode->next;
+		CurrentNode = CurrentNode->Next;
 	}
 	// reaching here means it got through all the list and it doesn't exist;
 	return false;

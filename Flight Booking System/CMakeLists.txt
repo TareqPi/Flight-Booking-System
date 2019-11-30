@@ -6,5 +6,5 @@ Project("Flight Booking System")
 # Add source to this project's executable.
 add_executable (CMakeTarget "Flight Booking System.cpp" "Flight Booking System.h" "Passenger.h" "Passenger.cpp" 
 "Flight.h" "Flight.cpp" "Plane.h" "Plane.cpp" "Date.h" "Date.cpp" "MainMenu.cpp" "Sorting.cpp" "Searching.cpp" 
-"LoadData.cpp" "FlightList.h" "FlightList.cpp" "FlightNode.h" "PassengerList.h" "PassengerList.h")
+"LoadData.cpp" "FlightList.h" "FlightList.cpp" "FlightNode.h" "PassengerList.h" "PassengerList.cpp")
 # TODO: Add tests and install targets if needed.

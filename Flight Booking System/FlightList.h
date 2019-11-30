@@ -14,7 +14,7 @@ class FlightList {
 
 		bool IsEmpty();
 		void InsertNode(Flight);
-		int GetSize();
+		int GetSize() const;
 
 		void FindNode(string, string, FlightList&);
 		void PriceLowestToHighest();

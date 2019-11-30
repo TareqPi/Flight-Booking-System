@@ -12,12 +12,17 @@ FlightList::FlightList() {
 void FlightList::InsertNode(Flight NewFlight) {
 	FlightNode* NewNode = new FlightNode;
 	NewNode->FlightData = NewFlight;
-	NewNode->Next = Head;
+	if (IsEmpty()) {
+		NewNode->Next = NULL;
+	}
+	else {
+		NewNode->Next = Head;
+	}
 	Head = NewNode;
 	ListSize++;
 }
 
-int FlightList::GetSize() {
+int FlightList::GetSize() const {
 	return ListSize;
 }
 
@@ -56,7 +61,7 @@ void FlightList::PriceLowestToHighest() {
 }
 
 bool FlightList::IsEmpty() { 
-	return (Head == NULL);
+	return Head == NULL;
 }
 
 void FlightList::DisplayList() {
