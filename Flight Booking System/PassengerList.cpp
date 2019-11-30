@@ -30,23 +30,25 @@ bool PassengerList::IsEmpty() {
 	return Head == NULL; 
 }
 
-int PassengerList::FindNode(Passenger PassengerToFind) {
+PassengerNode* PassengerList::FindNode(Passenger PassengerToFind) {
 	if (IsEmpty()) {
 		cout << "List is Empty" << endl;
-		return -1;  // -1 is the key that indicates the list is empty
+		return NULL;  // key that indicates the list is empty
 	}
 	int CurrentNodeIndex = 0;
 	PassengerNode* CurrentNode = Head;
+	cout << Head->PassengerData.GetFirstName() << endl;
 	while (CurrentNode) {
 		if (CurrentNode->PassengerData.GetFirstName() == PassengerToFind.GetFirstName() &&
 			CurrentNode->PassengerData.GetLastName() == PassengerToFind.GetLastName() &&
 			CurrentNode->PassengerData.GetPassword() == PassengerToFind.GetPassword())
-			return CurrentNodeIndex;
+			return CurrentNode;
 		CurrentNode = CurrentNode->Next;
 		++CurrentNodeIndex;
 	}
-	return -1; // if not found
+	return NULL; // if not found
 }
+
 int PassengerList::GetSize() const {
 	return ListSize;
 }

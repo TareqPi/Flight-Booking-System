@@ -20,7 +20,7 @@ public:
 	bool IsEmpty();
 	void InsertNode(Passenger);
 	int GetSize() const;
-	int FindNode(Passenger);
+	PassengerNode* FindNode(Passenger);
 	bool DeleteNode(Passenger);
 };
 

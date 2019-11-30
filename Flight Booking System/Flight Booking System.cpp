@@ -10,13 +10,15 @@ int main() {
 	LoadData(Flights);
 
 	const int NumOfUsers = 3;
-	Passenger Users[NumOfUsers] = { Passenger("Abdullah", "AlSolaiman", "135789", "password123"), 
+	Passenger User[NumOfUsers] = { Passenger("Abdullah", "AlSolaiman", "135789", "password123"), 
 				Passenger("Irfan", "Azim", "246810", "password321"),
 				Passenger("Tareq", "Al-Ahdal", "1234567", "myPassword") };
 	
-	PassengerList List;
+	PassengerList Users;
+
+	//Users.InsertNode()
 	for (int i = 0; i < NumOfUsers; i++) {
-		List.InsertNode(Users[i]);
+		Users.InsertNode(User[i]);
 	}
 
 	// right now we have a Linked List of Passenger called "List"
@@ -41,12 +43,12 @@ int main() {
 	getline(cin, Pass);
 	Temp.SetPassword(Pass);
 	
-	int ID = List.FindNode(Temp);    // we pass the passenger to the list, the list has a function that will search for it
-	if (ID == -1) {
+	PassengerNode* theUser = Users.FindNode(Temp);    
+	if (!(theUser)) {
 		cout << "Not Found" << endl;
 		goto Login;
 	}
-	cout << ID;
+	
 	TryAgain:
 	int Choice = MainMenu();
 	
@@ -102,11 +104,11 @@ int main() {
 	
 			cout << "Choice: ";
 			cin >> Choice;
-			Users[ID].BookFlight(Result.SearchNode(Choice));
+			theUser->PassengerData.BookFlight(Result.SearchNode(Choice));
 			goto TryAgain;
 		}
 		case 2: {
-			if (Users[ID].ViewBookedFlights())
+			if (theUser->PassengerData.ViewBookedFlights())
 				goto TryAgain;
 			else {
 				cout << "No booked flights" << endl << endl;
@@ -114,12 +116,12 @@ int main() {
 			}
 		}
 		case 3: {
-			if (Users[ID].ViewBookedFlights()) {
+			if (theUser->PassengerData.ViewBookedFlights()) {
 				cout << "Enter the flight ID that you wish to cancel: ";
 				string CancelNum;
 				cin.ignore();
 				getline(cin, CancelNum);
-				Users[ID].CancelFlight(CancelNum);
+				theUser->PassengerData.CancelFlight(CancelNum);
 				goto TryAgain;
 			}
 			else {
