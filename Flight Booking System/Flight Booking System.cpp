@@ -46,7 +46,7 @@ int main() {
 		cout << "Not Found" << endl;
 		goto Login;
 	}
-
+	cout << ID;
 	TryAgain:
 	int Choice = MainMenu();
 	
@@ -102,10 +102,7 @@ int main() {
 	
 			cout << "Choice: ";
 			cin >> Choice;
-			//for (int i = 0; i < Choice; i++) {
-			//	Result.
-			//}
-			//Users[ID].BookFlight(*Result[Choice - 1]);
+			Users[ID].BookFlight(Result.SearchNode(Choice));
 			goto TryAgain;
 		}
 		case 2: {

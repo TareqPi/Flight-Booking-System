@@ -42,7 +42,7 @@ void FlightList::PriceLowestToHighest() {
 	FlightNode* CurrNode = Head;
 	FlightNode Temp;
 	int swaps;
-	//Acsending Order
+	//Ascending Order
 	for (int Pass = 1; (Pass < ListSize); Pass++) {
 		swaps = 0;
 		CurrNode = Head;
@@ -64,7 +64,7 @@ void FlightList::PriceHighestToLowest() {
 	FlightNode* CurrNode = Head;
 	FlightNode Temp;
 	int swaps;
-	//Acsending Order
+	//Descending Order
 	for (int Pass = 1; (Pass < ListSize); Pass++) {
 		swaps = 0;
 		CurrNode = Head;
@@ -108,7 +108,7 @@ void FlightList::DurationLongestToShortest() {
 	FlightNode* CurrNode = Head;
 	FlightNode Temp;
 	int swaps;
-	//Acsending Order
+	//Descending Order
 	for (int Pass = 1; (Pass < ListSize); Pass++) {
 		swaps = 0;
 		CurrNode = Head;
@@ -163,4 +163,12 @@ bool FlightList::DeleteNode(string CancelNum) {
 		CurrentNode = CurrentNode->Next;
 	}
 	return false;
+}
+
+Flight FlightList::SearchNode(int index) {
+	FlightNode* CurrentNode = Head;
+	for (int i = 0; i < index-1; i++) {
+		CurrentNode = CurrentNode->Next;
+	}
+	return CurrentNode->FlightData;
 }

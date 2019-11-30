@@ -21,6 +21,7 @@ class FlightList {
 		void PriceHighestToLowest();
 		void DurationShortestToLongest();
 		void DurationLongestToShortest();
+		Flight SearchNode(int);
 		bool DeleteNode(string);
 		void DisplayList();
 };
