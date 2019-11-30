@@ -10,7 +10,7 @@ class FlightList {
 		int ListSize;
 	public:
 		FlightList();
-//		~FlightList();
+		~FlightList();
 
 		bool IsEmpty();
 		void InsertNode(Flight);

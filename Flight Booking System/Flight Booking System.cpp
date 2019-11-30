@@ -1,7 +1,6 @@
 ﻿// Flight Booking System.cpp : Defines the entry point for the application.
 #include "Flight Booking System.h"
 
-
 int main() {
 
 	//MergeSort(Flights, 0, Size - 1); //Order all the flights alphabetically
@@ -14,9 +13,9 @@ int main() {
 				Passenger("Irfan", "Azim", "246810", "password321"),
 				Passenger("Tareq", "Al-Ahdal", "1234567", "myPassword") };
 	
-	PassengerList Users;
+	PassengerList Users; //
 
-	//Users.InsertNode()
+	
 	for (int i = 0; i < NumOfUsers; i++) {
 		Users.InsertNode(User[i]);
 	}

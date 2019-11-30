@@ -16,7 +16,7 @@ private:
 	int ListSize;
 public:
 	PassengerList();
-	//~PassengerList(); 
+	~PassengerList(); 
 	bool IsEmpty();
 	void InsertNode(Passenger);
 	int GetSize() const;

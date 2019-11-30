@@ -9,6 +9,16 @@ FlightList::FlightList() {
 	ListSize = 0;
 }
 
+FlightList::~FlightList() {
+	FlightNode* CurrNode = Head, *NextNode = NULL;
+	while (CurrNode != NULL) {
+		NextNode = CurrNode->Next;
+		delete CurrNode;
+		CurrNode = NextNode;
+	}
+	Head = NULL;
+}
+
 void FlightList::InsertNode(Flight NewFlight) {
 	FlightNode* NewNode = new FlightNode;
 	NewNode->FlightData = NewFlight;

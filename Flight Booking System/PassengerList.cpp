@@ -12,6 +12,16 @@ PassengerList::PassengerList() {
 	ListSize = 0;
 }
 
+PassengerList::~PassengerList() {
+	PassengerNode* CurrNode = Head, *NextNode = NULL;
+	while (CurrNode != NULL) {
+		NextNode = CurrNode->Next;
+		delete CurrNode;
+		CurrNode = NextNode;
+	}
+	Head = NULL;
+}
+
 void PassengerList::InsertNode(Passenger NewPassenger) {
 	PassengerNode* NewNode = new PassengerNode;
 	NewNode->PassengerData = NewPassenger;
