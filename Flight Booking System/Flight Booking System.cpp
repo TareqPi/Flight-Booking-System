@@ -13,8 +13,7 @@ int main() {
 				Passenger("Irfan", "Azim", "246810", "password321"),
 				Passenger("Tareq", "Al-Ahdal", "1234567", "myPassword") };
 	
-	PassengerList Users; //
-
+	PassengerList Users;
 	
 	for (int i = 0; i < NumOfUsers; i++) {
 		Users.InsertNode(User[i]);

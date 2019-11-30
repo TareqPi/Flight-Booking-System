@@ -47,7 +47,6 @@ PassengerNode* PassengerList::FindNode(Passenger PassengerToFind) {
 	}
 	int CurrentNodeIndex = 0;
 	PassengerNode* CurrentNode = Head;
-	cout << Head->PassengerData.GetFirstName() << endl;
 	while (CurrentNode) {
 		if (CurrentNode->PassengerData.GetFirstName() == PassengerToFind.GetFirstName() &&
 			CurrentNode->PassengerData.GetLastName() == PassengerToFind.GetLastName() &&
