@@ -2,7 +2,6 @@
 #include "Flight Booking System.h"
 
 
-
 int main() {
 
 	//MergeSort(Flights, 0, Size - 1); //Order all the flights alphabetically
@@ -83,10 +82,8 @@ int main() {
 				cin >> Choice;
 				if (1 == Choice)
 					Result.PriceLowestToHighest();
-				//PriceLowestToHighest(Result, ResultArraySize);
 				else if (2 == Choice)
-					cout << "still" << endl;
-				//PriceHighestToLowest(Result, ResultArraySize);
+					Result.PriceHighestToLowest();
 			}
 			else if ('d' == POrD) {
 				cout << "By Duration:" << endl
@@ -96,20 +93,20 @@ int main() {
 					<< "Choice: ";
 				cin >> Choice;
 				if (1 == Choice)
-					cout << "still" << endl;
-				//	DurationShortestToLongest(Result, ResultArraySize);
+					Result.DurationShortestToLongest();
 				if (2 == Choice)
-					cout << "still" << endl;
-				//	DurationLongestToShortest(Result, ResultArraySize);
+					Result.DurationLongestToShortest();
 			}
 
 			Result.DisplayList();
-
 	
-			//cout << "Choice: ";
-			//cin >> Choice;
+			cout << "Choice: ";
+			cin >> Choice;
+			//for (int i = 0; i < Choice; i++) {
+			//	Result.
+			//}
 			//Users[ID].BookFlight(*Result[Choice - 1]);
-			//goto TryAgain;
+			goto TryAgain;
 		}
 		case 2: {
 			if (Users[ID].ViewBookedFlights())

@@ -73,7 +73,6 @@ bool PassengerList::DeleteNode(Passenger PassengerToDelete) {
 			CurrentNode->Next = CurrentNode->Next->Next;
 			return true;
 		}
-
 		CurrentNode = CurrentNode->Next;
 	}
 	// reaching here means it got through all the list and it doesn't exist;

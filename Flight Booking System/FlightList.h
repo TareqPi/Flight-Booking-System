@@ -18,7 +18,10 @@ class FlightList {
 
 		void FindNode(string, string, FlightList&);
 		void PriceLowestToHighest();
-//		int DeleteNode(double x);
+		void PriceHighestToLowest();
+		void DurationShortestToLongest();
+		void DurationLongestToShortest();
+		bool DeleteNode(string);
 		void DisplayList();
 };
 

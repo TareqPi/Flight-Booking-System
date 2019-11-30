@@ -52,49 +52,33 @@ string Passenger::GetPassportNumber() const {
 	return _PassportNumber;
 }
 
-bool Passenger::ViewBookedFlights() const {
+bool Passenger::ViewBookedFlights() {
 	if (NumOfFlights == 0) {
 		return false;
 	}
-	for (int i = 0; i < NumOfFlights; i++) {
-		cout << 1 + i << ")";
-		BookedFlights[i]->PrintDetails();
-		cout << "----------------------------------" << endl;
-	}
+	BookedFlights.DisplayList();
 	return true;
 }
 
-void Passenger::BookFlight(Flight &MyFlight) {
-	if (NumOfFlights == 7) {
-		cout << "Max bookings reached" << endl;
-		return;
-	}
-	else {
-		BookedFlights[NumOfFlights++] = &MyFlight;
-		cout << GetFirstName() << " " << GetLastName() << " have successfully booked flight " << MyFlight.GetFlightID()
-			<< " from " << MyFlight.GetSource() << " to " << MyFlight.GetDestination() << endl << endl;
-	}
+void Passenger::BookFlight(Flight MyFlight) {
+	BookedFlights.InsertNode(MyFlight);
+	NumOfFlights++;
+	cout << GetFirstName() << " " << GetLastName() << " have successfully booked flight " << MyFlight.GetFlightID()
+		 << " from " << MyFlight.GetSource() << " to " << MyFlight.GetDestination() << endl << endl;
 }
 
 void Passenger::CancelFlight(string FlightNumber) {
-	for (int i = 0; i < NumOfFlights; i++) { // sequential search
-		if (FlightNumber == BookedFlights[i]->GetFlightID()) {
-			BookedFlights[i] = NULL;
-			NumOfFlights--;
-			cout << "Flight " << FlightNumber << " is cancelled" << endl << endl;
-			for (int j = i; j < NumOfFlights; j++) { //reorganizing the array after one of the elements is null
-				BookedFlights[j] = BookedFlights[j+1];
-			}
-			return;
-		}
-		if (i == NumOfFlights - 1)
-			cout << "Not Found" << endl;
+	if (BookedFlights.DeleteNode(FlightNumber)) {
+		cout << "Flight " << FlightNumber << " is cancelled" << endl << endl;
+		return;
 	}
+	else
+		cout << "Not Found" << endl;
 }
 
-Passenger::~Passenger() {
-	if (NumOfFlights != 0)
-		for (int i = 0; i < NumOfFlights; i++) {
-			BookedFlights[i] = NULL;
-		}
-}
+//Passenger::~Passenger() {
+//	if (NumOfFlights != 0)
+//		for (int i = 0; i < NumOfFlights; i++) {
+//			BookedFlights[i] = NULL;
+//		}
+//}
