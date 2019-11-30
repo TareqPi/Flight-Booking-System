@@ -2,8 +2,6 @@
 #include "Flight Booking System.h"
 
 int main() {
-
-	//MergeSort(Flights, 0, Size - 1); //Order all the flights alphabetically
 	
 	FlightList Flights;
 	LoadData(Flights);
