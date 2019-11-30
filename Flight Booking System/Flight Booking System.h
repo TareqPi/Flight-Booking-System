@@ -16,7 +16,6 @@ using std::endl;
 using std::string;
 
 int MainMenu();
-void MergeSort(Flight[], int, int);
 void LoadData(FlightList&);
 // TODO: Reference additional headers your program requires here.
 

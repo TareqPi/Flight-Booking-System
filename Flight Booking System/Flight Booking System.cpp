@@ -7,17 +7,12 @@ int main() {
 	
 	FlightList Flights;
 	LoadData(Flights);
-
-	const int NumOfUsers = 3;
-	Passenger User[NumOfUsers] = { Passenger("Abdullah", "AlSolaiman", "135789", "password123"), 
-				Passenger("Irfan", "Azim", "246810", "password321"),
-				Passenger("Tareq", "Al-Ahdal", "1234567", "myPassword") };
 	
 	PassengerList Users;
+	Users.InsertNode(Passenger("Abdullah", "AlSolaiman", "135789", "password123"));
+	Users.InsertNode(Passenger("Irfan", "Azim", "246810", "password321"));
+	Users.InsertNode(Passenger("Tareq", "Al-Ahdal", "1234567", "myPassword"));
 	
-	for (int i = 0; i < NumOfUsers; i++) {
-		Users.InsertNode(User[i]);
-	}
 
 	// right now we have a Linked List of Passenger called "List"
 	// we go on with performing actions on it using the function findUser in Searching cpp.
