@@ -15,8 +15,8 @@ class Passenger {
 		string _PassportNumber;
 		string _Password;
 		FlightList BookedFlights;
+		ActivityStack RecentActivities;
 		int NumOfFlights;
-		ActivityStack recentActivities;
 	public:
 		Passenger();
 		Passenger(string, string, string, string);
@@ -34,6 +34,7 @@ class Passenger {
 		void BookFlight(Flight);
 		void CancelFlight(string);
 		void RecordActivity(string);
+		void ShowActivities();
 		~Passenger();
 };
 #endif

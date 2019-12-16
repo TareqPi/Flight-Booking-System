@@ -2,11 +2,13 @@
 #include "ActivityStack.h"
 #include <iostream>
 using std::cout;
-void Stack::createStack() {
+using std::string;
+
+void ActivityStack::createStack() {
 	top = NULL;
 }
 
-void Stack::push(string newitem) {
+void ActivityStack::push(string newitem) {
 	nodeStack* newNode;
 	newNode = new (nodeStack);
 
@@ -19,7 +21,7 @@ void Stack::push(string newitem) {
 	}
 }
 
-void Stack::pop() {
+void ActivityStack::pop() {
 	nodeStack* tempNode;
 	if (isEmpty())
 		cout << "Sorry, cannot pop item from stack. Stack is still empty!\n";
@@ -30,13 +32,13 @@ void Stack::pop() {
 	}
 }
 
-string Stack::stackTop() {
+string ActivityStack::stackTop() {
 	if (isEmpty())
 		cout << "Sorry, stack is still empty!\n";
 	else
 		return top->data;
 }
 
-bool Stack::isEmpty() {
+bool ActivityStack::isEmpty() {
 	return (top == NULL);
 }

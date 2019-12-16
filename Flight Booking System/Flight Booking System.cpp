@@ -46,6 +46,7 @@ int main() {
 		goto Login;
 	}
 	
+	theUser->PassengerData.RecordActivity(LoggingIn);
 	TryAgain:
 	int Choice = MainMenu();
 	
@@ -54,6 +55,7 @@ int main() {
 			SearchAgain:
 			cin.ignore();
 			cout << endl;
+			theUser->PassengerData.RecordActivity(Searching);
 			cout << "Source: ";
 			string Source;
 			getline(cin, Source);
@@ -101,10 +103,12 @@ int main() {
 	
 			cout << "Choice: ";
 			cin >> Choice;
+			theUser->PassengerData.RecordActivity(Booking);
 			theUser->PassengerData.BookFlight(Result.SearchNode(Choice));
 			goto TryAgain;
 		}
 		case 2: {
+			theUser->PassengerData.RecordActivity(Viewing);
 			if (theUser->PassengerData.ViewBookedFlights())
 				goto TryAgain;
 			else {
@@ -119,6 +123,7 @@ int main() {
 				cin.ignore();
 				getline(cin, CancelNum);
 				theUser->PassengerData.CancelFlight(CancelNum);
+				theUser->PassengerData.RecordActivity(Cancelling);
 				goto TryAgain;
 			}
 			else {
@@ -127,11 +132,16 @@ int main() {
 			}
 		}
 		case 4: {
+			theUser->PassengerData.ShowActivities();
+			cout << "1";
+			goto TryAgain;
+		}
+		case 5: {
 			cout << "Logged out" << endl;
 			cin.ignore();
 			goto Login;
 		}
-		case 5: {
+		case 6: {
 			cout << "Logged out" << endl;
 			break;
 		}

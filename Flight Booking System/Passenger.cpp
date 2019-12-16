@@ -61,7 +61,21 @@ bool Passenger::ViewBookedFlights() {
 }
 
 void Passenger::RecordActivity(string activity) {
-	recentActivities.push(activity);
+	RecentActivities.push(activity);
+}
+
+void Passenger::ShowActivities() {
+	if (RecentActivities.isEmpty()) {
+		cout << "No Activties to show" << endl;
+	}
+	else {
+		int i = 1;
+		while (!RecentActivities.isEmpty) {
+				cout << i++ << " " << RecentActivities.stackTop() << endl;
+				RecentActivities.pop();
+			}
+		}
+	}
 }
 
 void Passenger::BookFlight(Flight MyFlight) {

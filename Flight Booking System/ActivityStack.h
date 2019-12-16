@@ -1,13 +1,14 @@
-#ifndef ACTIVIYSTACK_H
+#ifndef ACTIVITYSTACK_H
 #define ACTIVITYSTACK_H
-#include <string>
+#include <iostream>
+using std::string;
 class nodeStack{
 	public:
 		string data;
 		nodeStack* next;
 };
 
-class Stack {
+class ActivityStack {
 private:
 	nodeStack* top;
 public:
