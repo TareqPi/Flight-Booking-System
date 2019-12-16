@@ -31,6 +31,6 @@ class Passenger {
 		bool ViewBookedFlights();
 		void BookFlight(Flight);
 		void CancelFlight(string);
-	//	~Passenger();
+		~Passenger();
 };
 #endif
