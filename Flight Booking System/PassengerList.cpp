@@ -70,8 +70,9 @@ bool PassengerList::DeleteNode(Passenger PassengerToDelete) {
 	//2nd case: if the deleted one is actually the first element of the list;
 	if ((Head->PassengerData.GetFirstName() == PassengerToDelete.GetFirstName())
 		&& (Head->PassengerData.GetLastName() == PassengerToDelete.GetLastName())) {
-
+		PassengerNode* Temp = Head;
 		Head = Head->Next;
+		delete Temp;
 		return true;
 	}
 
@@ -80,8 +81,9 @@ bool PassengerList::DeleteNode(Passenger PassengerToDelete) {
 	while (CurrentNode->Next != NULL) {
 		if ((CurrentNode->Next->PassengerData.GetFirstName() == PassengerToDelete.GetFirstName())
 			&& (CurrentNode->Next->PassengerData.GetLastName() == PassengerToDelete.GetLastName())) {
-
+			PassengerNode* Temp = CurrentNode->Next;
 			CurrentNode->Next = CurrentNode->Next->Next;
+			delete Temp;
 			return true;
 		}
 		CurrentNode = CurrentNode->Next;

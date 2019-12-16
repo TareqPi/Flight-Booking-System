@@ -77,9 +77,6 @@ void Passenger::CancelFlight(string FlightNumber) {
 		cout << "Not Found" << endl;
 }
 
-//Passenger::~Passenger() {
-//	if (NumOfFlights != 0)
-//		for (int i = 0; i < NumOfFlights; i++) {
-//			BookedFlights[i] = NULL;
-//		}
-//}
+Passenger::~Passenger() {
+	cout << _FirstName << " " << _LastName << " has been deleted" << endl;
+}
