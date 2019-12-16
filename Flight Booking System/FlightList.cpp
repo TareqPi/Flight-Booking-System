@@ -159,15 +159,19 @@ bool FlightList::DeleteNode(string CancelNum) {
 	}
 	//2nd case: if the deleted one is actually the first element of the list;
 	if ((Head->FlightData.GetFlightID() == CancelNum)) {
+		FlightNode* Temp = Head;
 		Head = Head->Next;
+		delete Temp;
 		return true;
 	}
 
 	//3rd case: if the deleted is within the linked list.
 	FlightNode* CurrentNode = Head;
-	while (CurrentNode) {                                                                                ///
+	while (CurrentNode) {                                                                             
 		if ((CurrentNode->Next->FlightData.GetFlightID() == CancelNum)) {
+			FlightNode* Temp = CurrentNode->Next;
 			CurrentNode->Next = CurrentNode->Next->Next;
+			delete Temp;
 			return true;
 		}
 		CurrentNode = CurrentNode->Next;
