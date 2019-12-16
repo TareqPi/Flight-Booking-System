@@ -1,6 +1,7 @@
 // Implementation file for the Stack class
 #include "Stack.h"
-
+#include <iostream>
+using std::cout;
 void Stack::createStack() {
 	top = NULL;
 }
