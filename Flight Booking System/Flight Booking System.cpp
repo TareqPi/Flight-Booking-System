@@ -5,7 +5,6 @@ int main() {
 	
 	FlightList Flights;
 	LoadData(Flights);
-	Stack recentActivities;
 
 	string Searching = "Searched for flights";
 	string Booking = "Booked a flight";

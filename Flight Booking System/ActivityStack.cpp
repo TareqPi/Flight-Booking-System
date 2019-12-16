@@ -1,12 +1,12 @@
 // Implementation file for the Stack class
-#include "Stack.h"
+#include "ActivityStack.h"
 #include <iostream>
 using std::cout;
 void Stack::createStack() {
 	top = NULL;
 }
 
-void Stack::push(char newitem) {
+void Stack::push(string newitem) {
 	nodeStack* newNode;
 	newNode = new (nodeStack);
 
@@ -30,7 +30,7 @@ void Stack::pop() {
 	}
 }
 
-char Stack::stackTop() {
+string Stack::stackTop() {
 	if (isEmpty())
 		cout << "Sorry, stack is still empty!\n";
 	else

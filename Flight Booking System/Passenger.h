@@ -3,6 +3,7 @@
 #define PASSENGER_H
 #include "Date.h"
 #include "FlightList.h"
+#include "ActivityStack.h"
 #include <string>
 using std::string;
 
@@ -15,6 +16,7 @@ class Passenger {
 		string _Password;
 		FlightList BookedFlights;
 		int NumOfFlights;
+		ActivityStack recentActivities;
 	public:
 		Passenger();
 		Passenger(string, string, string, string);
@@ -31,6 +33,7 @@ class Passenger {
 		bool ViewBookedFlights();
 		void BookFlight(Flight);
 		void CancelFlight(string);
+		void RecordActivity(string);
 		~Passenger();
 };
 #endif

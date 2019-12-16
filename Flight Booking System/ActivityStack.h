@@ -1,9 +1,9 @@
-#ifndef STACK_H
-#define STACK_H
-
+#ifndef ACTIVIYSTACK_H
+#define ACTIVITYSTACK_H
+#include <string>
 class nodeStack{
 	public:
-		char data;
+		string data;
 		nodeStack* next;
 };
 
@@ -12,10 +12,10 @@ private:
 	nodeStack* top;
 public:
 	void createStack();
-	void push(char);
+	void push(string);
 	void pop();
-	char stackTop();
+	string stackTop();
 	bool isEmpty();
 };
 
-#endif // !STACK_H
+#endif

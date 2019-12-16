@@ -60,6 +60,10 @@ bool Passenger::ViewBookedFlights() {
 	return true;
 }
 
+void Passenger::RecordActivity(string activity) {
+	recentActivities.push(activity);
+}
+
 void Passenger::BookFlight(Flight MyFlight) {
 	BookedFlights.InsertNode(MyFlight);
 	NumOfFlights++;
