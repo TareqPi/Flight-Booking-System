@@ -70,6 +70,7 @@ void Passenger::BookFlight(Flight MyFlight) {
 void Passenger::CancelFlight(string FlightNumber) {
 	if (BookedFlights.DeleteNode(FlightNumber)) {
 		cout << "Flight " << FlightNumber << " is cancelled" << endl << endl;
+		NumOfFlights--;
 		return;
 	}
 	else
