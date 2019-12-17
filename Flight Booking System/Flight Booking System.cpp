@@ -23,6 +23,10 @@ int main() {
 	
 	Passenger Temp;  // declaring temp object, to use it late in the List::FindNode(Passenger PanssengrToFind) method.
 
+	Art("Welcome to");
+	Art("Fligh MS");
+	cout << endl << endl;
+	
 	Login:
 
 	cout << "First Name: ";

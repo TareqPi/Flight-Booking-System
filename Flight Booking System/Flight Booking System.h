@@ -11,6 +11,7 @@
 #include "FlightList.h"
 #include "PassengerList.h"
 #include "ActivityStack.h"
+#include "Art.h"
 using std::cout;
 using std::cin;
 using std::endl;
