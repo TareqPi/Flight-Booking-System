@@ -9,9 +9,8 @@ class nodeStack{
 };
 
 class ActivityStack {
-private:
-	nodeStack* top;
 public:
+	nodeStack* top;
 	void createStack();
 	void push(string);
 	void pop();

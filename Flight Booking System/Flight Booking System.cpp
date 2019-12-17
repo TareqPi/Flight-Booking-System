@@ -133,7 +133,6 @@ int main() {
 		}
 		case 4: {
 			theUser->PassengerData.ShowActivities();
-			cout << "1";
 			goto TryAgain;
 		}
 		case 5: {

@@ -10,7 +10,7 @@ void ActivityStack::createStack() {
 
 void ActivityStack::push(string newitem) {
 	nodeStack* newNode;
-	newNode = new (nodeStack);
+	newNode = new nodeStack;
 
 	if (newNode == NULL)
 		cout << "Cannot allocate memory\n";
@@ -28,7 +28,7 @@ void ActivityStack::pop() {
 	else {
 		tempNode = top;
 		top = tempNode->next;
-		delete(tempNode);
+		delete tempNode;
 	}
 }
 

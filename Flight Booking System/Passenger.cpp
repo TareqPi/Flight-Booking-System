@@ -19,6 +19,7 @@ Passenger::Passenger(string FirstName, string LastName, string PassportNumber, s
 	_LastName = LastName;
 	_PassportNumber = PassportNumber;
 	_Password = Password;
+	RecentActivities.createStack();
 }
 
 void Passenger::SetFirstName(string FirstName) {
@@ -69,12 +70,16 @@ void Passenger::ShowActivities() {
 		cout << "No Activties to show" << endl;
 	}
 	else {
+		cout << endl << endl
+			<< "----------------------------------" << endl
+			<< "Most Recent Activities" << endl
+			<< "----------------------------------" << endl;
 		int i = 1;
-		while (!RecentActivities.isEmpty) {
+		while (!RecentActivities.isEmpty()) {
 				cout << i++ << " " << RecentActivities.stackTop() << endl;
 				RecentActivities.pop();
-			}
 		}
+		cout << endl << endl;
 	}
 }
 
