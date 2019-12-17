@@ -1,6 +1,6 @@
 ﻿// Flight Booking System.cpp : Defines the entry point for the application.
 #include "Flight Booking System.h"
-
+#include <conio.h>
 int main() {
 	
 	FlightList Flights;
@@ -27,22 +27,75 @@ int main() {
 	Art("Fligh MS");
 	cout << endl << endl;
 	
-	Login:
+SignUp:
+	string SignFName, SignLName, SignPassport, SignPassword;
+	cout << "WELCOME TO INFINITE LEPAK AIRLINE MANAGEMENT SYSTEM" << endl;
+	cout << "DO you want to sign up or login?" << endl;
+	cout << "1.Sign up" << endl;
+	cout << "2.Log-in" << endl;
+	cout << "3.Exit the program" << endl;
+	cout << " Input: ";
+	int StartInput;
+	cin >> StartInput;
+	if (StartInput == 1) {
+		cout << "Please fill in your personal info" << endl;
+		cout << "First Name:";
+		cin.clear();
+		cin.ignore(256, '\n');
+		getline(cin, SignFName);
+		cout << "Last Name:";
+		getline(cin, SignLName);
+		cout << "Passport Number:";
+		getline(cin, SignPassport);
+		cout << "Password:";
+		getline(cin, SignPassword);
+		Passenger SignIn(SignFName, SignLName, SignPassport, SignPassword);
+		Users.InsertNode(SignIn);
+		cout << "Your account is successfully created" << endl;
+		goto SignUp;
+	}
+	else if (StartInput == 2)
+		goto Login;
+	else {
+		return 0;
+	}
 
+Login:
+	cin.clear();
+	cin.ignore(256, '\n');
 	cout << "First Name: ";
 	string FName;
 	getline(cin, FName);
 	Temp.SetFirstName(FName);
+
 
 	cout << "Last Name: ";
 	string LName;
 	getline(cin, LName);
 	Temp.SetLastName(LName);
 
+
 	cout << "Password: ";
 	string Pass;
-	getline(cin, Pass);
+	//getline(cin, Pass);
+	char temp = getch();
+
+	while (temp != '\r')
+	{
+		if ((temp == 8 || temp == 127) && !Pass.empty())
+		{
+			cout << "\b \b";
+			Pass.erase(Pass.size() - 1);
+
+		}
+		else {
+			std::cout << '*';
+			Pass += temp;
+			temp = getch();
+		}
+	}
 	Temp.SetPassword(Pass);
+	cout << endl;
 	
 	PassengerNode* theUser = Users.FindNode(Temp);    
 	if (!(theUser)) {
@@ -142,7 +195,7 @@ int main() {
 		case 5: {
 			cout << "Logged out" << endl;
 			cin.ignore();
-			goto Login;
+			goto SignUp;
 		}
 		case 6: {
 			cout << "Logged out" << endl;
