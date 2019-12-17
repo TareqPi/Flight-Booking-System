@@ -1,3 +1,12 @@
+/************************************************************************ 
+This Class is written by Lord Hypersonic
+ on https://lordhypersonic.blogspot.com/2019/02/c-ascii-art-generator.html
+and he allows people to use it in their projects
+ he said in his post and we qoute: 
+ "Hope now you are able to understand the algorithm, 
+ to understand more clearly read the source code given below 
+ and you can use this source code in your projects too."
+********************************************************************** */
 #pragma once
 #include <string>
 #include <iostream>
